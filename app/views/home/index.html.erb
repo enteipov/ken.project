@@ -1,0 +1,11 @@
+<h1>We are making progress.</h1>
+<%= button_to('Generate New Data',new_city_path) %>
+<ul>
+  <% City.all.each do | city | %>
+      <li>
+        <span><%= city.name %>, <%= city.state %></span>
+        <span><%= button_to("Edit",edit_city_path(city.id),{:method => :get})%></span>
+        <span><%= button_to("Delete", city, :method => :delete, data: {:confirm => 'Are you sure?'})%></span>
+      </li>
+  <% end %>
+</ul>

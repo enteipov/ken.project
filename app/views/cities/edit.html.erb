@@ -1,0 +1,10 @@
+<% city = City.find_by(:id => params[:id]) %>
+
+<h1>Edit City Data For <%= city[:name] %> </h1>
+<%= form_for city, url: {action: "update"},method:"put" do |f| %>
+    <%= f.label(:name, "City Name") %>
+    <%= f.text_field :name, placeholder: "City Name" %>
+    <%= f.label(:state, "City State") %>
+    <%= f.text_field :state, placeholder: "City State" %>
+    <%= f.submit "Update Data" %>
+<% end %>

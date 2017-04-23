@@ -1,0 +1,8 @@
+<h1>Please Enter City Data:</h1>
+<%= form_for @city, url: {action: "create"} do |f|%>
+    <%= f.label(:name, "City Name")%>
+    <%= f.text_field :name %>
+    <%= f.label(:state, "City State")%>
+    <%= f.text_field :state %>
+    <%= f.submit "Add Data" %>
+<% end %>
